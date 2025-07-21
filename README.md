@@ -6,4 +6,4 @@ This repository is for analyzing
 
 - Prompting Reasoning 
 
-- Agent with Moral Reasoning
+- Agentic Moral Reasoning
