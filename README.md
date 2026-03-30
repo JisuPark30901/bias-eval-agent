@@ -29,11 +29,15 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 ┌──────────────────┐
 │  Evaluation       │  5개 기준 루브릭 평가 + typology 분류
 └──────────────────┘
-https://github.com/JisuPark30901/pub/blob/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/1.png
 
-https://github.com/JisuPark30901/pub/blob/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/2.png
 
-https://github.com/JisuPark30901/pub/blob/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/3.png
+https://github.com/JisuPark30901/pub/raw/da2b9e93fd92e5732864063d220bc81d67987493/0.png
+
+https://github.com/JisuPark30901/pub/raw/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/1.png
+
+https://github.com/JisuPark30901/pub/raw/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/2.png
+
+https://github.com/JisuPark30901/pub/raw/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/3.png
 
 
 ```
