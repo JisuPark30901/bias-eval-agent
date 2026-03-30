@@ -1,0 +1,10 @@
+# OpenAI 키
+OPENAI_API_KEY=sk-proj-your-openai-api-key-here
+
+# LangSmith
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=lsv2_pt_your-langsmith-api-key-here
+LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+LANGCHAIN_PROJECT=bias-graph
+
+PYTHONPATH="src"
