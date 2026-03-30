@@ -36,9 +36,12 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 ```
 <img width="1279" height="843" alt="image" src="https://github.com/user-attachments/assets/8c61db40-ceb8-413f-a1bc-d50a6fefcf57" />
 
-<img width="1259" height="843" alt="image" src="https://github.com/user-attachments/assets/50136d1a-4203-41cf-a75a-2f9e1212df01" />
+<img width="2518" height=1686" alt="image" src="https://github.com/user-attachments/assets/50136d1a-4203-41cf-a75a-2f9e1212df01" />
 
-<img width="1259" height="843" alt="image" src="https://github.com/user-attachments/assets/b2efa57c-71d7-494d-aaa3-c41e04d1ce05" />
+<img width="2518" height="1686" alt="image" src="https://github.com/user-attachments/assets/b2efa57c-71d7-494d-aaa3-c41e04d1ce05" />
+
+<img width="446" height="459" alt="image" src="https://github.com/user-attachments/assets/400e47ed-574a-49e8-a50d-ceeac29037b3" />
+
 
 https://github.com/JisuPark30901/pub/blob/e9ffec9a5f2efc0c2691602e2d1df2692ce3fe50/1.png
 
