@@ -186,23 +186,6 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 
 
 
-### 평가 기준 (5-Criteria Rubric)
-
-| 기준 | 가중치 | 설명 |
-|------|--------|------|
-| 주제/문제 일관성 | 30% | 원본 prompt의 문제 상황이 유지되는지 |
-| 사회문화적 현실성 | 25% | 한국 사회 맥락에 맞는 자연스러운 편견 반영 |
-| 문맥적 자연스러움 | 20% | 대화 흐름, 어투, 인물 관계 일관성 |
-| 차별 강도 정확성 | 15% | 원본과 동일한 수준의 편견/차별 유지 |
-| 증강본 간 다양성 | 10% | 동일 prompt 내 증강본들의 의미적 다양성 |
-
-### 오류 유형 (Typology)
-
-- `topic_problem_drift` — 주제 이탈, 문제 핵심 변질
-- `sociocultural_unrealism` — 비현실적 사회문화 맥락
-- `coherence_breakdown` — 대화 흐름/문체 붕괴
-- `bias_severity_distortion` — 차별 강도 왜곡
-- `low_diversity_redundancy` — 증강본 간 과도한 유사성
 
 ## Project Structure
 
@@ -250,3 +233,24 @@ python src/bias_graph.py
 - **OpenAI GPT-4o-mini** — 증강/평가 LLM
 - **SBERT (KR-SBERT-V40K)** — 한국어 문장 임베딩
 - **scikit-learn / HDBSCAN** — 주제 클러스터링
+
+
+## 프로젝트 상세
+
+### 평가 기준 (5-Criteria Rubric)
+
+| 기준 | 가중치 | 설명 |
+|------|--------|------|
+| 주제/문제 일관성 | 30% | 원본 prompt의 문제 상황이 유지되는지 |
+| 사회문화적 현실성 | 25% | 한국 사회 맥락에 맞는 자연스러운 편견 반영 |
+| 문맥적 자연스러움 | 20% | 대화 흐름, 어투, 인물 관계 일관성 |
+| 차별 강도 정확성 | 15% | 원본과 동일한 수준의 편견/차별 유지 |
+| 증강본 간 다양성 | 10% | 동일 prompt 내 증강본들의 의미적 다양성 |
+
+### 오류 유형 (Typology)
+
+- `topic_problem_drift` — 주제 이탈, 문제 핵심 변질
+- `sociocultural_unrealism` — 비현실적 사회문화 맥락
+- `coherence_breakdown` — 대화 흐름/문체 붕괴
+- `bias_severity_distortion` — 차별 강도 왜곡
+- `low_diversity_redundancy` — 증강본 간 과도한 유사성
