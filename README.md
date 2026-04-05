@@ -43,7 +43,192 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 
 
 
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-7" src="https://github.com/user-attachments/assets/f08f45dc-8937-4468-ba1f-822634393d1e" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-6" src="https://github.com/user-attachments/assets/d4e3ded2-77ba-4f14-8a5d-3dff293b6575" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-5" src="https://github.com/user-attachments/assets/1dba5f73-183e-4a3b-8de7-5e01c01fd87b" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-4" src="https://github.com/user-attachments/assets/c27b6a0a-2d58-48c0-8563-97919c2373d6" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-3" src="https://github.com/user-attachments/assets/4899631f-81fd-4fa0-8131-d1b4a31ac295" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/b84c5363-f24c-41d3-9879-1847a4ab81be" />
 
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM-as-Judge Limitations</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 24px;
+      color: #24292f;
+      line-height: 1.6;
+    }
+    h2 { border-bottom: 1px solid #d0d7de; padding-bottom: 8px; }
+    h3 { margin-top: 28px; }
+    p { margin: 12px 0 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    th {
+      background-color: #f6f8fa;
+      border: 1px solid #d0d7de;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    td {
+      border: 1px solid #d0d7de;
+      padding: 8px 12px;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background-color: #f6f8fa; }
+    em { font-style: italic; }
+    code {
+      background: #eef0f3;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Motivation: Why Not LLM-as-a-Judge Alone?</h2>
+
+<p>
+  ROUGE, BLEU와 같은 전통적 지표가 n-gram 중복만을 측정해 텍스트의 의미적 품질을 포착하지 못하는 한계를 가지듯,
+  LLM-as-a-Judge 역시 독립적인 평가 방법으로 사용될 경우 신뢰성과 공정성 측면에서 구조적 한계를 가진다.
+  아래 표는 이러한 한계를 실증적으로 보고한 주요 연구들을 정리한 것으로, 본 연구에서 Human-in-the-Loop 방식을 채택한 근거가 된다.
+</p>
+
+<h3>📌 Bias</h3>
+<table>
+  <thead>
+    <tr>
+      <th>논문</th>
+      <th>Venue</th>
+      <th>연도</th>
+      <th>한계 유형</th>
+      <th>핵심 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zheng et al., <em>Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</em></td>
+      <td>NeurIPS</td>
+      <td>2023</td>
+      <td>Position / Verbosity / Self-enhancement Bias</td>
+      <td>GPT-4도 80% 이상 인간과 일치하지만 편향 완화 없이는 공정하지 않음</td>
+    </tr>
+    <tr>
+      <td>Ye et al., <em>Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge</em></td>
+      <td>ICLR</td>
+      <td>2025</td>
+      <td>12가지 편향 유형</td>
+      <td>
+        CALM 프레임워크로 verbosity, fallacy oversight, sentiment bias 등 12종 체계화.
+        내용 품질이 아닌 표현 스타일·순서 등 표면적 요소에 의해 판단이 달라지며,
+        Claude-3.5-Sonnet도 분노 표현 추가만으로 판정을 번복하는 사례 확인.
+        GPT-4 포함 6개 모델 실험에서 고성능 모델도 특정 태스크에서 편향 지속.
+      </td>
+    </tr>
+    <tr>
+      <td>Wataoka et al., <em>Self-Preference Bias in LLM-as-a-Judge</em></td>
+      <td>arXiv</td>
+      <td>2024</td>
+      <td>Self-preference Bias</td>
+      <td>LLM은 perplexity 낮은 출력을 자신이 생성하지 않아도 더 높게 평가</td>
+    </tr>
+    <tr>
+      <td>Shi et al., <em>A Systematic Study of Position Bias in LLM-as-a-Judge</em></td>
+      <td>IJCNLP</td>
+      <td>2025</td>
+      <td>Position Bias</td>
+      <td>judge 모델 선택이 positional bias에 가장 큰 영향, 기존 완화 전략도 완전 제거 실패</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>📌 Consistency / Reliability</h3>
+<table>
+  <thead>
+    <tr>
+      <th>논문</th>
+      <th>Venue</th>
+      <th>연도</th>
+      <th>한계 유형</th>
+      <th>핵심 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Schroeder &amp; Wood-Doughty, <em>Rating Roulette</em></td>
+      <td>EMNLP Findings</td>
+      <td>2025</td>
+      <td>Intra-rater Inconsistency</td>
+      <td>반복 평가 시 Krippendorff's α가 기준치 0.8 미달, temperature=0은 오히려 성능 저하</td>
+    </tr>
+    <tr>
+      <td>Li et al., <em>Can You Trust LLM Judgments?</em></td>
+      <td>arXiv</td>
+      <td>2024</td>
+      <td>IRR 불안정성</td>
+      <td>random seed 변동만으로 IRR이 0.167~1.00까지 변동, IRR 자체가 신뢰 지표로 부적합</td>
+    </tr>
+    <tr>
+      <td>Li et al., <em>An Empirical Study of LLM-as-a-Judge</em></td>
+      <td>arXiv</td>
+      <td>2025</td>
+      <td>Score Consistency</td>
+      <td>루브릭 구성·점수 기술 방식에 따라 Krippendorff's α 기반 consistency가 크게 달라짐</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>📌 Domain / Generalization Gap</h3>
+<table>
+  <thead>
+    <tr>
+      <th>논문</th>
+      <th>Venue</th>
+      <th>연도</th>
+      <th>한계 유형</th>
+      <th>핵심 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Szymanski et al., <em>Limitations of LLM-as-a-Judge in Expert Knowledge Tasks</em></td>
+      <td>ACM IUI</td>
+      <td>2025</td>
+      <td>Expert Domain Gap</td>
+      <td>전문 도메인에서 위험하거나 부정확한 내용을 간과하고 지시 따르기에만 집중</td>
+    </tr>
+    <tr>
+      <td>Gu et al., <em>LLMs-as-Judges: A Comprehensive Survey</em></td>
+      <td>arXiv</td>
+      <td>2024</td>
+      <td>다차원적 한계 종합</td>
+      <td>프롬프트 템플릿 민감성, 학습 데이터 편향 계승, 도메인별 기준 적용 실패</td>
+    </tr>
+    <tr>
+      <td>Liang et al., <em>A Survey on LLM-as-a-Judge</em></td>
+      <td>arXiv</td>
+      <td>2024</td>
+      <td>다국어/일반화 한계</td>
+      <td>다국어 환경에서 Fleiss' κ ≈ 0.3, 모델 크기 확장으로도 해소 안 됨</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
 
 
 
