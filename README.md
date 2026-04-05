@@ -4,6 +4,14 @@
 LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품질을 관리합니다.
 
 ## Overview
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/c14052be-af7a-4b23-a34f-61fd2ad14ad0" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-3" src="https://github.com/user-attachments/assets/d7ba3f2a-96d6-4c61-b202-279c610821ed" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-4" src="https://github.com/user-attachments/assets/29f7d995-d8d6-4aff-9fff-8527cb4e5364" />
+
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-5" src="https://github.com/user-attachments/assets/5796cb50-36a4-45cb-bf21-820abe498445" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-6" src="https://github.com/user-attachments/assets/a6a55df3-b431-4922-abd4-48f781639a00" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-7" src="https://github.com/user-attachments/assets/0a58991c-eef2-4c87-8311-0710cd388d0e" />
+
 
 ```
 원본 편향 발화
@@ -14,12 +22,11 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 └────────┬─────────┘
          ▼
 ┌──────────────────┐
-│  Error Factors   │  인간 평가자 정의 에러/위험 요인 로딩
+│  Error Analysis  │  인간 평가자 정의 에러/위험 요인 로딩
 └────────┬─────────┘
          ▼
 ┌──────────────────┐
-│  Reflective      │  에러 요인 + 1차 후보 → 메타 프롬프트 구성
-│  Prompt Build    │
+│ Prompt Re- Build │  에러 요인 + 1차 후보 → 메타 프롬프트 구성
 └────────┬─────────┘
          ▼
 ┌──────────────────┐
@@ -27,16 +34,8 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 └────────┬─────────┘
          ▼
 ┌──────────────────┐
-│  Evaluation       │  5개 기준 루브릭 평가 + typology 분류
+│  Evaluation      │  5개 기준 루브릭 평가 + typology 분류
 └──────────────────┘
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/1762b288-3351-4562-a94b-6436896e0e3e" />
-
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-3" src="https://github.com/user-attachments/assets/7b1130d1-f03c-475f-b272-f3f62b9dacec" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-4" src="https://github.com/user-attachments/assets/cd26f879-4d99-4e92-a950-00ca1f1f86e4" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-5" src="https://github.com/user-attachments/assets/5c33bd3d-fabe-476b-a868-f337c715a5f9" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-6" src="https://github.com/user-attachments/assets/bd1e6be4-588b-4620-8df4-ec5c797332a8" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-7" src="https://github.com/user-attachments/assets/bef9b9b3-4ca4-4cd9-8b5e-8cf0690af34c" />
-
 
 
 
