@@ -1,6 +1,6 @@
 # Bias Augmentation & Reflective Evaluation Pipeline
 
-한국어 사회윤리적 편향(bias) 발화 데이터셋의 **증강 → 평가 → 리플렉션 기반 재증강** 파이프라인입니다.  
+한국어 사회윤리적 편향(bias) 발화 데이터셋의 **증강 → 평가 → Reflective Agent 기반 재증강** 파이프라인입니다.  
 LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품질을 관리합니다.
 
 ## Overview
@@ -34,22 +34,6 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 
 
 ```
-<img width="1279" height="843" alt="image" src="https://github.com/user-attachments/assets/8c61db40-ceb8-413f-a1bc-d50a6fefcf57" style="margin: -5px 0;"/>
-
-<img width="2518" height="1686" alt="image" src="https://github.com/user-attachments/assets/50136d1a-4203-41cf-a75a-2f9e1212df01" style="margin: -5px 0;" />
-
-<img width="2518" height="1686" alt="image" src="https://github.com/user-attachments/assets/b2efa57c-71d7-494d-aaa3-c41e04d1ce05" style="margin: -5px 0;">
-
-
-
-
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-7" src="https://github.com/user-attachments/assets/f08f45dc-8937-4468-ba1f-822634393d1e" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-6" src="https://github.com/user-attachments/assets/d4e3ded2-77ba-4f14-8a5d-3dff293b6575" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-5" src="https://github.com/user-attachments/assets/1dba5f73-183e-4a3b-8de7-5e01c01fd87b" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-4" src="https://github.com/user-attachments/assets/c27b6a0a-2d58-48c0-8563-97919c2373d6" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-3" src="https://github.com/user-attachments/assets/4899631f-81fd-4fa0-8131-d1b4a31ac295" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/b84c5363-f24c-41d3-9879-1847a4ab81be" />
-
 
 
 <!DOCTYPE html>
