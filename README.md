@@ -29,6 +29,14 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 ┌──────────────────┐
 │  Evaluation       │  5개 기준 루브릭 평가 + typology 분류
 └──────────────────┘
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/1762b288-3351-4562-a94b-6436896e0e3e" />
+
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-3" src="https://github.com/user-attachments/assets/7b1130d1-f03c-475f-b272-f3f62b9dacec" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-4" src="https://github.com/user-attachments/assets/cd26f879-4d99-4e92-a950-00ca1f1f86e4" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-5" src="https://github.com/user-attachments/assets/5c33bd3d-fabe-476b-a868-f337c715a5f9" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-6" src="https://github.com/user-attachments/assets/bd1e6be4-588b-4620-8df4-ec5c797332a8" />
+<img width="2000" height="1125" alt="portfolio_selectstar_260403-7" src="https://github.com/user-attachments/assets/bef9b9b3-4ca4-4cd9-8b5e-8cf0690af34c" />
+
 
 
 
@@ -41,45 +49,6 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLM-as-Judge Limitations</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 24px;
-      color: #24292f;
-      line-height: 1.6;
-    }
-    h2 { border-bottom: 1px solid #d0d7de; padding-bottom: 8px; }
-    h3 { margin-top: 28px; }
-    p { margin: 12px 0 20px; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-      margin-bottom: 32px;
-    }
-    th {
-      background-color: #f6f8fa;
-      border: 1px solid #d0d7de;
-      padding: 8px 12px;
-      text-align: left;
-    }
-    td {
-      border: 1px solid #d0d7de;
-      padding: 8px 12px;
-      vertical-align: top;
-    }
-    tr:nth-child(even) td { background-color: #f6f8fa; }
-    em { font-style: italic; }
-    code {
-      background: #eef0f3;
-      border-radius: 4px;
-      padding: 1px 5px;
-      font-size: 13px;
-    }
-  </style>
 </head>
 <body>
 
