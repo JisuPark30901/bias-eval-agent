@@ -1,7 +1,8 @@
 # Bias Augmentation & Reflective Evaluation Pipeline
 
-한국어 사회윤리적 편향(bias) 발화 데이터셋의 **증강 → 평가 → Reflective Agent 기반 재증강** 파이프라인입니다.  
-LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품질을 관리합니다.
+한국어 사회윤리적 편향(bias) 발화 데이터셋의 **증강 → 평가 → Reflective Agent 기반 재증강** 파이프라인
+LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품질을 관리
+
 
 ## Overview
 <img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/c14052be-af7a-4b23-a34f-61fd2ad14ad0" />
