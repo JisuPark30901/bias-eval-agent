@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "bias_graph": "./src/bias_graph.py:workflow"
+  },
+  "env": ".env"
+}

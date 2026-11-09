@@ -4,15 +4,14 @@
 LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품질을 관리
 
 
-
 ## Overview
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-2" src="https://github.com/user-attachments/assets/c14052be-af7a-4b23-a34f-61fd2ad14ad0" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-3" src="https://github.com/user-attachments/assets/d7ba3f2a-96d6-4c61-b202-279c610821ed" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-4" src="https://github.com/user-attachments/assets/29f7d995-d8d6-4aff-9fff-8527cb4e5364" />
+<img width="2000" height="1125" alt="pipeline_overview_1" src="https://github.com/user-attachments/assets/c14052be-af7a-4b23-a34f-61fd2ad14ad0" />
+<img width="2000" height="1125" alt="pipeline_overview_2" src="https://github.com/user-attachments/assets/d7ba3f2a-96d6-4c61-b202-279c610821ed" />
+<img width="2000" height="1125" alt="pipeline_overview_3" src="https://github.com/user-attachments/assets/29f7d995-d8d6-4aff-9fff-8527cb4e5364" />
 
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-5" src="https://github.com/user-attachments/assets/5796cb50-36a4-45cb-bf21-820abe498445" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-6" src="https://github.com/user-attachments/assets/a6a55df3-b431-4922-abd4-48f781639a00" />
-<img width="2000" height="1125" alt="portfolio_selectstar_260403-7" src="https://github.com/user-attachments/assets/0a58991c-eef2-4c87-8311-0710cd388d0e" />
+<img width="2000" height="1125" alt="pipeline_overview_4" src="https://github.com/user-attachments/assets/5796cb50-36a4-45cb-bf21-820abe498445" />
+<img width="2000" height="1125" alt="pipeline_overview_5" src="https://github.com/user-attachments/assets/a6a55df3-b431-4922-abd4-48f781639a00" />
+<img width="2000" height="1125" alt="pipeline_overview_6" src="https://github.com/user-attachments/assets/0a58991c-eef2-4c87-8311-0710cd388d0e" />
 
 
 ```
@@ -40,18 +39,8 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 └──────────────────┘
 
 
-
-
 ```
 
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 
 <h2>Motivation: Why Not LLM-as-a-Judge Alone? & 기존 벤치마크의 한계 </h2>
 
@@ -198,35 +187,22 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 | **KorNAT** | 2024 | 한국어 정렬 (가치/상식) | 한국 사회적 가치 및 상식 정렬 평가 | 10,000 질문 | '한국적 가치' 개념의 다원성 |
 | **XSafety / IndicSafe** | 2024 | 다국어 안전성 | 다국어 환경 안전성 평가, 문화적 금기 반영 | 수십만 개 프롬프트 | 저자원 언어 데이터 품질, 문화적 차이 정량화 어려움 |
 
-
-</body>
-</html>
-
-
-
-
-
-
 ## Project Structure
 
 ```
 ├── src/
 │   ├── bias_graph.py              # 핵심 LangGraph 파이프라인 (증강→리플렉션→평가)
 │   ├── augmentation_graph.py      # 6-Phase 증강 파이프라인 (대규모 배치용)
-│   └── evaluator_agent.py         # 5기준 루브릭 평가 에이전트
+│   ├── evaluator_agent.py         # 5기준 루브릭 평가 에이전트
+│   └── evaluation_agent.py        # 루브릭 평가 배치 실행 스크립트
 │
 ├── data/
-│   ├── set6_to_10_evaluation_with_basis_v2.xlsx   # 평가 결과 (근거 포함)
-│   └── stratification_analysis.png                # 층화 분석 결과
+│   ├── set6_to_10_evaluation_with_basis_v2.xlsx      # 평가 결과 (근거 포함)
+│   ├── intersectionality_comprehensive_analysis.xlsx # 교차성 분석 결과
+│   └── stratification_analysis.png                   # 층화 분석 결과
 │
-├── config/
-│   ├── langgraph.json             # LangGraph Studio 설정
-│   └── langgraph-requirements.txt # Python 의존성
-│
-├── notebooks/
-│   ├── sbert_with_kmeans.ipynb    # SBERT + KMeans 주제 클러스터링
-│   └── sbert_with_dbscan.ipynb    # SBERT + HDBSCAN 주제 클러스터링
-│
+├── langgraph.json                 # LangGraph Studio 설정
+├── requirements.txt               # Python 의존성
 ├── .env.example                   # 환경변수 템플릿
 ├── .gitignore
 └── README.md
@@ -236,7 +212,7 @@ LangGraph와 LangSmith를 활용하여 에이전트 기반으로 데이터 품�
 
 ```bash
 # 1. 의존성 설치
-pip install -r config/langgraph-requirements.txt
+pip install -r requirements.txt
 
 # 2. 환경변수 설정
 cp .env.example .env
